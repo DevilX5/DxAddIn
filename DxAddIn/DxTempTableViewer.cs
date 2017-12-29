@@ -17,9 +17,9 @@ namespace DxAddIn
             InitializeComponent();
         }
         public ToolStripLabel TsMsg { get { return tsmsg; } }
-        private DataTable _dt;
+        private object _dt;
 
-        public DataTable Dt
+        public object Dt
         {
             get { return _dt; }
             set
@@ -32,7 +32,7 @@ namespace DxAddIn
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             var start = toolStripTextBox1.Text.ToString();
-            CreateDataInExcel(Dt, "current", start);
+            CreateDataInExcel(Dt as DataTable, "current", start);
         }
         void CreateDataInExcel(DataTable dtresult, string type, string start)
         {

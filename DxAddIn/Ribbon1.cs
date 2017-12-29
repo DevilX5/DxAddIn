@@ -61,5 +61,26 @@ namespace DxAddIn
                 });
             });
         }
+
+        private void button1_Click(object sender, RibbonControlEventArgs e)
+        {
+            var ws = CurrentApp.App.ActiveWorkbook.ActiveSheet as Excel.Worksheet;
+            var range = ws.Application.Selection as Excel.Range;
+            var zhlst = new List<string>();
+            var enlst = new List<string>();
+            var values = range.Cast<Excel.Range>().SelectMany()
+            //var tp = new DxTempTableViewer();
+            //var p = Globals.ThisAddIn.CustomTaskPanes.Add(tp, "转换");
+            //tp.Dock = DockStyle.Fill;
+            //p.Width = 600;
+            //p.Visible = true;
+            //tp.Dt = values;
+        }
+        
+    }
+    public class ZhEnField
+    {
+        public string ZhName { get; set; }
+        public string EnName { get; set; }
     }
 }
