@@ -55,11 +55,11 @@ namespace DxAddIn
                 Excel.Worksheet ws;
                 if (type.Equals("new"))
                 {
-                    ws = CurrentApp.App.ActiveWorkbook.Sheets.Add();
+                    ws = ExcelHelper.Sheets.Add();
                 }
                 else
                 {
-                    ws = CurrentApp.App.ActiveSheet as Excel.Worksheet;
+                    ws = ExcelHelper.Worksheet as Excel.Worksheet;
                 }
                 ws.Range[start].get_Resize(rows, cols).Value2 = s;
             }
